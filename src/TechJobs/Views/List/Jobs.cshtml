@@ -2,6 +2,20 @@
 
 <h3>@ViewBag.jobs.Count Result(s)</h3>
 
-@{ 
-    // TODO #3 - Use the same list display from Views/Search/Index.cshtml 
+@{
+    // TODO #3 - Use the same list display from Views/Search/Index.cshtml
+}
+
+@foreach (Dictionary<string, string> job in ViewBag.jobs) // iterate over each and every job entry
+{<table class="job-listing">
+        @foreach (KeyValuePair<string, string> i in job) //iterate over each and every kvp inside each specific job
+        {
+            <tr>
+                <td>@i.Key.ToUpper()</td>
+                <td>@i.Value</td>
+            </tr>
+        }
+    </table>
+    <br />
+
 }
